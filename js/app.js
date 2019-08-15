@@ -15,33 +15,36 @@ class UI {
     this.itemList = [];
     this.itemID = 0;
   }
+  //submit budget method
+  submitBudgetForm(){
+    console.log("test");
+  }
 }
 
-function eventListenters (){
+function eventListenters() {
   const budgetForm = document.getElementById("budget-form");
   const expenseForm = document.getElementById("expense-form");
   const expenseList = document.getElementById("expense-list");
+
+  //new UI class
+  const ui = new UI();
+
+  //budget form
+  budgetForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    ui.submitBudgetForm();
+  });
+  //expense form
+  expenseForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+  });
+  //expense click
+  expenseList.addEventListener("click", function(event) {});
 }
 
-//new UI class
-const ui = new UI();
-
-//budget form
-budgetForm.addEventListener("submit", function(event){
-
-})
-
-//expense form
-expenseForm.addEventListener("submit", function(event){
-
-})
-//expense click
-expenseList.addEventListener("submit", function(event){
-
-})
 
 document.addEventListener("DOMContentLoaded", function(){
   eventListenters();
-})
+});
 
 
